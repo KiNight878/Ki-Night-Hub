@@ -1,49 +1,28 @@
--- Primeiro, carregue a biblioteca Orion
+-- Carregando a biblioteca Orion
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
--- Crie uma janela
-local Window = OrionLib:MakeWindow({Name = "Exemplo de Menu", HidePremium = false, SaveConfig = true, ConfigFolder = "ExemploMenuConfig"})
+-- Criando uma janela com o nome "Kai Night Save Hub"
+local Window = OrionLib:MakeWindow({Name = "Kai Night Save Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "KaiNightSaveHubConfig"})
 
--- Crie uma aba
+-- Criando uma aba "Blox Fruits"
 local Tab = Window:MakeTab({
-    Name = "Menu",
-    Icon = "rbxassetid://4483345998", -- Ícone para a aba (opcional)
+    Name = "Blox Fruits",
     PremiumOnly = false
 })
 
--- Adicione seções e botões ao menu
-Tab:AddSection({
-    Name = "Opções de Jogo"
-})
-
+-- Adicionando um botão "W-azure"
 Tab:AddButton({
-    Name = "Novo Jogo",
+    Name = "W-azure",
     Callback = function()
-        print("Novo Jogo selecionado")
+        print("Botão W-azure clicado")
+        getgenv().Team = "Pirates"
+        getgenv().AutoLoad = false
+        getgenv().SlowLoadUi = false
+        getgenv().ForceUseSilentAimDashModifier = false
+        getgenv().ForceUseWalkSpeedModifier = false
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
     end    
 })
 
-Tab:AddButton({
-    Name = "Carregar Jogo",
-    Callback = function()
-        print("Carregar Jogo selecionado")
-    end    
-})
-
-Tab:AddButton({
-    Name = "Opções",
-    Callback = function()
-        print("Opções selecionado")
-    end    
-})
-
-Tab:AddButton({
-    Name = "Sair",
-    Callback = function()
-        print("Sair selecionado")
-        game:Shutdown() -- Fecha o jogo
-    end    
-})
-
--- Inicia a GUI
+-- Iniciando a GUI
 OrionLib:Init()
