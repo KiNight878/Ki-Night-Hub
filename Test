@@ -1,0 +1,155 @@
+-- LocalScript dentro de StarterPlayerScripts
+
+-- Orion Library (inclua o código completo da biblioteca aqui)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Criar a janela do menu
+local Window = OrionLib:MakeWindow({
+    Name = "Ki Night Save",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest"
+})
+
+-- Função para criar botões com os scripts correspondentes
+local function criarBotao(nome, script, aba)
+    aba:AddButton({
+        Name = nome,
+        Callback = function()
+            print("Botão " .. nome .. " pressionado")
+            loadstring(script)()
+        end
+    })
+end
+
+-- Criar as abas solicitadas
+local AnimeFightersTab = Window:MakeTab({
+    Name = "Anime Fighters Simulator",
+    Icon = "rbxassetid://4483345998", -- Ícone pode ser alterado conforme necessário
+    PremiumOnly = false
+})
+
+local OneFruitTab = Window:MakeTab({
+    Name = "One Fruit Simulator",
+    Icon = "rbxassetid://4483345998", -- Ícone pode ser alterado conforme necessário
+    PremiumOnly = false
+})
+
+local PetCatchersTab = Window:MakeTab({
+    Name = "Pet Catchers",
+    Icon = "rbxassetid://4483345998", -- Ícone pode ser alterado conforme necessário
+    PremiumOnly = false
+})
+
+local ArmWrestleTab = Window:MakeTab({
+    Name = "Arm Wrestle Simulator",
+    Icon = "rbxassetid://4483345998", -- Ícone pode ser alterado conforme necessário
+    PremiumOnly = false
+})
+
+local BrookhavenTab = Window:MakeTab({
+    Name = "Brookhaven🏡RP",
+    Icon = "rbxassetid://4483345998", -- Ícone pode ser alterado conforme necessário
+    PremiumOnly = false
+})
+
+-- Scripts na aba Anime Fighters Simulator
+criarBotao("Reaper Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AyoReaper/Reaper-Hub/main/loader.lua"))()
+]], AnimeFightersTab)
+
+criarBotao("Autofarm", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/Autofarm_481"))()
+]], AnimeFightersTab)
+
+criarBotao("Zer0 Hub", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/Zer0-Hub_660"))()
+]], AnimeFightersTab)
+
+criarBotao("HoHo Hub", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-HoHo-Hub-+15-Games-2392"))()
+]], AnimeFightersTab)
+
+-- Scripts na aba One Fruit Simulator
+criarBotao("Crazy Hub", [[
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/CrazyHub123/NexusHubMain/main/Main.lua", true))()
+]], OneFruitTab)
+
+criarBotao("KillAura and QuestAura", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/RAIDS-ONE-FRUIT-KillAura-and-QuestAura-7469"))()
+]], OneFruitTab)
+
+criarBotao("OMG HUB", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/Blade-Ball-OMG-HUB-9219"))()
+]], OneFruitTab)
+
+criarBotao("NukeHub V4", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-NukeHub-V4-10599"))()
+]], OneFruitTab)
+
+-- Scripts na aba Pet Catchers (vazia conforme fornecido)
+-- Nenhuma informação de scripts fornecida para essa aba
+
+-- Scripts na aba Arm Wrestle Simulator
+criarBotao("LuaRepo Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/v3.lua"))()
+]], ArmWrestleTab)
+
+criarBotao("The Nebulas Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/eLriver/The-Nebulas/main/loader.lua"))()
+]], ArmWrestleTab)
+
+criarBotao("Pryxo Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pryxo/Hub/main/Hub"))()
+]], ArmWrestleTab)
+
+criarBotao("Ware Hub", [[
+loadstring(game:HttpGet('https://raw.githubusercontent.com/OutDatedUser/scripthub/main/Script/InfinityWare'))()
+]], ArmWrestleTab)
+
+-- Scripts na aba Brookhaven🏡RP
+criarBotao("Randoms Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Alech01/Scripts-Randoms/main/Brookhaven211"))()
+]], BrookhavenTab)
+
+criarBotao("ice Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMae17/NewIceHub/main/Brookhaven"))()
+]], BrookhavenTab)
+
+criarBotao("Unknown Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S33dedL0rdz/-Unknown-Roblox-Vfly-Script-.file/main/Rbxscript.c"))()
+]], BrookhavenTab)
+
+criarBotao("dark Hub", [[
+loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/3e50ce0fdd03713dfbeb1845ee6f52d7/raw/630318908f56a984db9568a89e33eadb7998158a/feutg1",true))()
+]], BrookhavenTab)
+
+criarBotao("Drakainnn Hub", [[
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DrakainnnDL/Script/main/BrookHaven1'))()
+]], BrookhavenTab)
+
+criarBotao("Ez Hub", [[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/poolist/EzScript/main/Bro"))()
+]], BrookhavenTab)
+
+criarBotao("By M1ZZ001", [[
+loadstring(game:HttpGet('https://raw.githubusercontent.com/M1ZZ001/BrookhavenR4D/main/Brookhaven%20R4D%20Script'))()
+]], BrookhavenTab)
+
+criarBotao("illyamarj Hub", [[
+loadstring(game:HttpGet('https://raw.githubusercontent.com/illyamarj/HUB/main/Brookhaven'))()
+]], BrookhavenTab)
+
+criarBotao("Script Brookhaven ZOMBIE", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/PETS!BrookhavenRP-Zombie-Invasion-Script-brookheaven-4232"))()
+]], BrookhavenTab)
+
+criarBotao("fixed this guy's script", [[
+loadstring(game:HttpGet("https://scriptblox.com/raw/PETS!BrookhavenRP-Zombie-Invasion-fixed-this-guy's-script-4242"))()
+]], BrookhavenTab)
+
+-- Scripts para Build A Boat For Treasure (vazia conforme fornecido)
+-- Nenhuma informação de scripts fornecida para essa aba
+
+-- Inicializar a interface
+OrionLib:Init()
