@@ -1,32 +1,26 @@
 -- Carregando a biblioteca Orion
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
--- Criando uma janela com o nome "Ki Night Save Hub"
-local Window = OrionLib:MakeWindow({Name = "Ki Night Save Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "KiNightSaveHubConfig"})
-
--- Criando uma aba "Blox Fruits"
-local TabBF = Window:MakeTab({
-    Name = "Blox Fruits",
-    PremiumOnly = false
+-- Criando a janela principal
+local Window = OrionLib:MakeWindow({
+    Name = "Ki Night Save Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "KiNightSaveHubConfig"
 })
 
--- Criando uma aba "All Star Tower Defense"
-local TabASTD = Window:MakeTab({
-    Name = "All Star Tower Defense",
-    PremiumOnly = false
-})
+-- Criando abas para "Blox Fruits" e "All Star Tower Defense"
+local TabBF = Window:MakeTab({ Name = "Blox Fruits", PremiumOnly = false })
+local TabASTD = Window:MakeTab({ Name = "All Star Tower Defense", PremiumOnly = false })
 
--- Função para carregar e executar o script conforme a seleção
+-- Função para executar o script conforme a seleção
 local function executeSelectedHub(option)
     print("Selecionado:", option)
     if option == "Ninja Hub V1" then
-        -- Executar script para Ninja Hub V1
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/NinjaHub/main/ninjahub.lua"))()
     elseif option == "Ninja Hub V2" then
-        -- Executar script para Ninja Hub V2
         loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/NinjaHub/main/LoaderBloxFruit.lua"))()
     elseif option == "Ninja Hub Kaitun" then
-        -- Executar script para Ninja Hub Kaitun
         repeat wait() until game:IsLoaded()
         _G["Ninja Hub Kaitun"] = {
             MAIN_UI_COLOR = Color3.fromRGB(255, 165, 0),
@@ -35,14 +29,14 @@ local function executeSelectedHub(option)
             AutoRejoinGame = 180000,
             GetFruitInWorld = true,
             AutoTeam = "Pirate",
-            GetMelees = {"Superhuman", "Death Step","Sharkman Karate","Electric Claw","Dargon Talon", "Godhuman"},
+            GetMelees = {"Superhuman", "Death Step", "Sharkman Karate", "Electric Claw", "Dargon Talon", "Godhuman"},
             Redeem_X2EXP_on = 10,
             Character_Config = {
                 InvisFromKen = true,
-                NoStun = true,
+                NoStun = true
             },
             ListFruitTake = {
-                "Ice-Ice","Light-Light","Spider-Spider",'Magma-Magma','Flame-Flame','Rumble-Rumble','Dark-Dark','Quake-Quake','Buddha-Buddha',
+                "Ice-Ice", "Light-Light", "Spider-Spider", 'Magma-Magma', 'Flame-Flame', 'Rumble-Rumble', 'Dark-Dark', 'Quake-Quake', 'Buddha-Buddha'
             },
             BuyBetterFruit = false,
             EatFruitWhenSea3 = false,
@@ -51,26 +45,25 @@ local function executeSelectedHub(option)
                 Shop_Items = true,
                 All_Haki = true,
                 Legendary_Swords = true,
-                Ectoplasm_Items = true,
+                Ectoplasm_Items = true
             },
             AutoItems = {
-                ["Second Sea"] = {"Kabucha","Rengoku","Acidum Rifle","Dark Coat"},
-                ["Third Sea"] = {"Cursed Dual Katana","Soul Guitar","Rainbow Haki","Hallow Scythe","Tushita","Yama","AutoElite","AutoRipIndra"},
+                ["Second Sea"] = {"Kabucha", "Rengoku", "Acidum Rifle", "Dark Coat"},
+                ["Third Sea"] = {"Cursed Dual Katana", "Soul Guitar", "Rainbow Haki", "Hallow Scythe", "Tushita", "Yama", "AutoElite", "AutoRipIndra"}
             },
             Deep_Config = {
                 ["Ectoplasm Farm"] = {
                     Enabled = true,
-                    FarmUntil = 250,
+                    FarmUntil = 250
                 },
                 ["Dark Beard Drop Farm"] = false,
-                ["Full 3 Leg Sword and True Triple Katana"] = false,
+                ["Full 3 Leg Sword and True Triple Katana"] = false
             },
             HopServerFarm = true,
             StopRaidWhenGetEnoughFrag = 10000,
             PVP_FARM = true,
-            ShowAccountInfo = true,
+            ShowAccountInfo = true
         }
-
         _G.BypassTeleport = false
         _G["Farm Sea Events When AllDone"] = {
             Enable = true,
@@ -79,15 +72,15 @@ local function executeSelectedHub(option)
             AttackFishes = true,
             AttackGhostBoats = false,
             CollectChest = true,
-            GetSharkAnchor = true,
+            GetSharkAnchor = true
         }
         _G["Candy Event"] = {
             BuyX2 = true,
-            BuyFrag = true,
+            BuyFrag = true
         }
         _G["Use Webhook"] = {
             Enable = true,
-            Webhook = "",
+            Webhook = ""
         }
         _G.SupperFixLag = true
 
@@ -103,13 +96,13 @@ local options = {
 }
 
 -- Dropdown para selecionar entre as opções
-local Dropdown = TabBF:AddDropdown({
+TabBF:AddDropdown({
     Name = "Ninja Hub Versão:",
     Options = options,
     Callback = executeSelectedHub
 })
 
--- Adicionando um botão "W-azure"
+-- Adicionando botões na aba "Blox Fruits"
 TabBF:AddButton({
     Name = "W-azure",
     Callback = function()
@@ -120,20 +113,18 @@ TabBF:AddButton({
         getgenv().ForceUseSilentAimDashModifier = false
         getgenv().ForceUseWalkSpeedModifier = false
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
-    end    
+    end
 })
 
--- Adicionando um botão "Tsuo Hub"
 TabBF:AddButton({
     Name = "Tsuo Hub",
     Callback = function()
         print("Botão Tsuo Hub clicado")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))()
-    end    
+    end
 })
 
 -- Adicionando botões na aba "All Star Tower Defense"
--- OMG HUB
 TabASTD:AddButton({
     Name = "OMG HUB",
     Callback = function()
@@ -142,7 +133,6 @@ TabASTD:AddButton({
     end
 })
 
--- Butif Rafan Hub
 TabASTD:AddButton({
     Name = "Butif Rafan Hub",
     Callback = function()
@@ -151,7 +141,6 @@ TabASTD:AddButton({
     end
 })
 
--- Buang Hub
 TabASTD:AddButton({
     Name = "Buang Hub",
     Callback = function()
@@ -160,7 +149,6 @@ TabASTD:AddButton({
     end
 })
 
--- Karmapanda
 TabASTD:AddButton({
     Name = "Karmapanda",
     Callback = function()
@@ -169,7 +157,6 @@ TabASTD:AddButton({
     end
 })
 
--- TGod Hub
 TabASTD:AddButton({
     Name = "TGod Hub",
     Callback = function()
@@ -178,7 +165,6 @@ TabASTD:AddButton({
     end
 })
 
--- Karma Hub
 TabASTD:AddButton({
     Name = "Karma Hub",
     Callback = function()
