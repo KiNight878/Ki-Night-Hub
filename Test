@@ -5,8 +5,14 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Ki Night Save Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "KiNightSaveHubConfig"})
 
 -- Criando uma aba "Blox Fruits"
-local Tab = Window:MakeTab({
+local TabBF = Window:MakeTab({
     Name = "Blox Fruits",
+    PremiumOnly = false
+})
+
+-- Criando uma aba "All Star Tower Defense"
+local TabASTD = Window:MakeTab({
+    Name = "All Star Tower Defense",
     PremiumOnly = false
 })
 
@@ -97,14 +103,14 @@ local options = {
 }
 
 -- Dropdown para selecionar entre as opções
-local Dropdown = Tab:AddDropdown({
+local Dropdown = TabBF:AddDropdown({
     Name = "Ninja Hub Versão:",
     Options = options,
     Callback = executeSelectedHub
 })
 
 -- Adicionando um botão "W-azure"
-Tab:AddButton({
+TabBF:AddButton({
     Name = "W-azure",
     Callback = function()
         print("Botão W-azure clicado")
@@ -118,12 +124,67 @@ Tab:AddButton({
 })
 
 -- Adicionando um botão "Tsuo Hub"
-Tab:AddButton({
+TabBF:AddButton({
     Name = "Tsuo Hub",
     Callback = function()
         print("Botão Tsuo Hub clicado")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))()
     end    
+})
+
+-- Adicionando botões na aba "All Star Tower Defense"
+-- OMG HUB
+TabASTD:AddButton({
+    Name = "OMG HUB",
+    Callback = function()
+        print("Botão OMG HUB clicado")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/AllStarTowerDefense"))()
+    end
+})
+
+-- Butif Rafan Hub
+TabASTD:AddButton({
+    Name = "Butif Rafan Hub",
+    Callback = function()
+        print("Botão Butif Rafan Hub clicado")
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-BUTIF-RAFAN-HUB-12407"))()
+    end
+})
+
+-- Buang Hub
+TabASTD:AddButton({
+    Name = "Buang Hub",
+    Callback = function()
+        print("Botão Buang Hub clicado")
+        loadstring(game:HttpGet("https://scriptblox.com/raw/UPDATE-+-4X-All-Star-Tower-Defense-Buang-Hub-12220"))()
+    end
+})
+
+-- Karmapanda
+TabASTD:AddButton({
+    Name = "Karmapanda",
+    Callback = function()
+        print("Botão Karmapanda clicado")
+        loadstring(game:HttpGet('https://script.karmapanda.dev'))()
+    end
+})
+
+-- TGod Hub
+TabASTD:AddButton({
+    Name = "TGod Hub",
+    Callback = function()
+        print("Botão TGod Hub clicado")
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-TGod-Hub-1804"))()
+    end
+})
+
+-- Karma Hub
+TabASTD:AddButton({
+    Name = "Karma Hub",
+    Callback = function()
+        print("Botão Karma Hub clicado")
+        loadstring(game:HttpGet("https://scriptblox.com/raw/RUMBLE-All-Star-Tower-Defense-Karma-Hub-1156"))()
+    end
 })
 
 -- Iniciando a GUI
